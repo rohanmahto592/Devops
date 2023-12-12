@@ -1,0 +1,61 @@
+#nested list
+-
+ - rohan
+ - komal
+-
+ - sonam
+ - xyz
+
+#corresponding json
+[
+  [
+    "rohan",
+    "komal"
+  ],
+  [
+    "sonam",
+    "xyz"
+  ]
+]
+#nested map
+name: rohan
+roles:
+ age: 43
+ job: SDE
+ location:
+  address: sccoter india
+  locality: asdsgdfh
+phone_number: 95054434234   
+#corresponding json
+{
+  "name": "rohan",
+  "roles": {
+    "age": 43,
+    "job": "SDE",
+    "location": {
+      "address": "sccoter india",
+      "locality": "asdsgdfh"
+    }
+  },
+  "phone_number": 95054434234
+}
+
+#resuing properties
+
+likings: &likes
+ fruit: apple
+ dislikes:
+  - playing
+  - eating
+  - swimming
+
+person1:
+ name: rohan
+ <<: *likes
+
+person2:
+  name: adfadsf  
+  age: 40
+  <<: *likes
+ 
+  

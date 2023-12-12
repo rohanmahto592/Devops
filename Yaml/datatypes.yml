@@ -1,0 +1,27 @@
+#string
+name: rohan
+myself: "rohan mahto"
+myname: 'rohan'
+
+details: sfsdfgvbtsgvtrgvdtg
+asfdsafsdgsdfgfg               #this is wrong ,ever next line should hvae variable to define it
+
+details: |
+asdfddgfsdfsg
+asdsfdgdfg
+
+details2: >
+i m rohan
+i live in lucknow
+sdafGVzdg]
+adsafsdgv
+
+#number type
+z: !!int 43
+positve: !!int 48
+negative: !!init -34
+commaType: !!int 54_3456 # 54,3456
+floatvalue: !!float 43.67
+not a num: .nan
+booleanvalue: !!bool no
+

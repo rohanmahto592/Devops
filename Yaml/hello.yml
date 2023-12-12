@@ -1,0 +1,25 @@
+# case sensitive language and follow indentation
+# how to differenciate documents in single yaml file?
+  # it can be diffrenciate using tripple dash ---
+# how to tell if document is ended?
+ # using ...
+#dictionary
+apple: "the color is red"
+roll: 1
+---
+{apple: "color is red",age: 43}
+---
+# block
+cities:
+ - "delhi"
+ - "xyz"
+ - "torento"
+---
+Cities: ["mumbai","japan","tokyo"]
+---
+#lists
+- apple
+- orange
+...
+
+

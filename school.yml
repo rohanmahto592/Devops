@@ -1,0 +1,66 @@
+school:
+ name: "st thomas"
+ principal: rohan
+ students:
+  -
+   name: sachin
+   age: 40
+   marks:
+    -
+      phy: 48
+      chem: 89
+      maths: 100
+    -
+      science: 49
+      commerce: 78
+   
+  -
+   name: tushar
+   age: 49 
+   marks:
+    -
+      phy: 34
+      chem:
+       
+         1st: 48
+         2nd : 89
+         3rd: 72
+   
+#corresponding json
+{
+  "school": {
+    "name": "st thomas",
+    "principal": "rohan",
+    "students": [
+      {
+        "name": "sachin",
+        "age": 40,
+        "marks": [
+          {
+            "phy": 48,
+            "chem": 89,
+            "maths": 100
+          },
+          {
+            "science": 49,
+            "commerce": 78
+          }
+        ]
+      },
+      {
+        "name": "tushar",
+        "age": 49,
+        "marks": [
+          {
+            "phy": 34,
+            "chem": {
+              "1st": 48,
+              "2nd": 89,
+              "3rd": 72
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+{
+    "school":[
+        {"name":"ST THOMAS",
+        "principal":"someone",
+        "students":[{
+            "name":"rohan",
+            "roll_no":45,
+            "marks":[{
+                "phy":48,
+                "chem":78
+            }]
+        }]
+        }
+
+    ]
+}

@@ -1,0 +1,66 @@
+To run an image
+docker run "xyz" , this command will download the image and create a container, if not present else it will run the container
+To see the list of images
+docker images
+
+To start the ubuntu or any operating system you have download through docker
+docker container run -it(interactive shell) ubuntu, this command will run the ubuntu or any os in local machine.
+
+to see the running container
+[docker container ls or docker ps]
+
+If you want to attach bash with the running container 
+copy the containerID and attach with the command [docker container exec -it 'containerID' bash]  
+
+Stop the particular container
+[docker stop 'containerID']
+
+to see all the stop containers
+[docker ps -a] # ps stands for process status
+
+to remove the container
+[docker remove dockerID]
+
+to see the entire information about container
+[docker inspect "container-name"]
+
+to see the logs for a particular container
+[docker logs containerID]
+
+to delete all the stopped containers at once
+[docker container prune -f]
+
+to run a container in  detach mode or in background
+[docker run -d "image"]
+
+to remove image from local
+[docker rmi "image" -f]
+
+How to share the image
+ suppose you have ubuntu and you made changes by adding a file and you want to share that file
+ process
+ docker run -it ubuntu
+ touch rohan.txt
+ echo "i m rohan" >>rohan.txt
+ docker commit -m "message" "previous_image_id" "new_image_name"
+ This will create a copy of the image with all the files and changes.
+
+how to create your own docker image
+login to docker hub through cmd using
+- docker login with username and password
+- create dockerfile with "touch Dockerfile"
+- open in write mode using vim command and add the base image starting with "FROM xyz" 
+- then add all the dependencies
+- CMD ["echo","heello rohan"], this command get executed after the docker image is executed.
+- save the changes
+- execute the command by [docker build -t "new_image_name"]
+when you execute this command , it will build along with the directory it is in. ***important
+
+Always create a main directory and inside which create a docker image then execute the build command.
+
+
+docker run command will build a container which is a running instance of an image.
+to build an image, we can use a docker build command which will build an image containg all the instructions.(docker build -t imagename)
+
+
+ 

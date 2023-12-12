@@ -1,0 +1,101 @@
+virtual machines
+ It has hypervisor- it is used to create multiple machines on operating system and manage virtual machines
+
+ virtual machines has there own operating system and does not use host operating system
+ dedicated hardware is allocated to all virtual machines from host
+
+what is docker?
+Docker is a set of platform as a service(PaaS) products that use OS-level virtualization to deliver software in packages called containers.
+Docker is a:
+- runtime 
+  It is used to start or stop the containers 
+- engine
+  daemon(server)
+    it is used to manage docker images,containers and network calls and commands run through client side, it constantly listens to docker api and update accordingly.
+       
+  rest api
+  docker CLI
+
+Image
+It is a running container, contain all the information related to application ,its dependencies,configurstion,scripts,default command to run and other meta data.
+we can build different image layers according to our need.
+
+Container
+every container is associated with single image.
+It is a runnable instance of an image, you can start,stop or terminate the container through docker CLI.
+
+
+What happens when you run docker run xyz command?
+
+when client run this command, there is a daemon(server) listens to the command and check if that  image is present in the local directory, it will return else it will go to the registery and fetch the image and then download it.
+
+what is layer in docker
+It is a dependencies files which installs along with image
+daemon check if the exisiting layer is already present then it will not download the layer as it is sharable.
+----------------------------------------------------------------------------------------------------------------------
+
+Kubernetes
+
+orchestrators
+it is used to manage microservices, scale and deploy  application dynamically without stopping the servers with zero downtime.
+applications that  have (self healing, zero downtime,scale property) and  run on top of Kubernetes are called cloud native applications.
+
+it provides logs, load balancing, run on local machine, public cloud
+
+architecture
+
+cluster = control plane + nodes
+pod= scheduling unit in the control plane for every node.
+every node goes inside each pod
+nodes can be treated as a virtual machines
+control plane is also known as master node.
+
+control plane manage the worker nodes(servers or VM) where your application is running.
+
+kubeCTL(CLI)- it communicates with the control plane for any type of operation on worker nodes.
+
+there are two ways, by which we can communicate with control plane, one is declrative way and another is imperative way
+declrative way is writing YAML file  and giving commands directly is imperative way.
+
+
+https://kubernetes.io/docs/concepts/overview/components/
+
+control plane consist of :
+kube-api,
+control manager,
+etcd(persistent store),
+scheduler
+
+kube-api : It acts as the entry point for all REST  commands used to control the cluster.
+
+etcd (etc,distributed)-> it is a persistent key-value database which store all the configurations of the distributed system.
+etcd stores:
+number of pods,
+current state of pods,
+configuration and the current state of cluster.
+
+scheduler: it checks for newly created pods and assign a node to run for them.
+
+control manager: it is an infinite loop which checks for all the request, redirection of the request, handle all the activity of the pods.
+
+how pods communicate with each other?
+whenever any pod is created, IP is assigned to it, also known and DNS, and internally they communicate through DNS or IP's.
+
+
+steps to create microservices using K8S
+ create a microservice,
+ containerize it.
+ put them in pods.
+ deploy these pods to the controller.
+
+
+There are many different types of controllers. Some examples of them are:
+
+Node controller: Responsible for noticing and responding when nodes go down.
+Job controller: Watches for Job objects that represent one-off tasks, then creates Pods to run those tasks to completion.
+EndpointSlice controller: Populates EndpointSlice objects (to provide a link between Services and Pods).
+ServiceAccount controller: Create default ServiceAccounts for new namespaces.
+
+kubelets: it runs on each node, it is used to check if the the pod is running or not.
+It contains the pod specs and configuration and check if the pod is healty and running by checking config file.
+
